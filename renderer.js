@@ -5,14 +5,24 @@ var exec = require('child_process').exec, child;
 var nodeConsole = require('console');
 var myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 
-function getData() {
-
-    let file = document.querySelector('#myFile').files[0].name;
-    myConsole.log(file);
-
-    exec('python2 omr.py --input images/' + file + ' --output out.jpg --show', function (error, stdOut, stdErr) {
-        myConsole.log(stdOut);
-    });
-
+function parse() {
+    let url = document.getElementById("urlIn").value;
+    console.log(url);
+    fetch(url)
+    .then((data) => { 
+        document.getElementById("result").value = JSON.stringify(data);
+     });
 }
-document.querySelector('#btnEd').addEventListener('click', getData)
+
+function serialize() {
+    let url = document.getElementById("urlIn").value;
+    myConsole.log(url);
+    fetch(url)
+    .then(data => data.json() )
+    .then((data) => { 
+        document.getElementById("result").value = data;
+     });
+}
+
+document.querySelector('#parse').addEventListener('click', parse)
+document.querySelector('#serialize').addEventListener('click', serialize)

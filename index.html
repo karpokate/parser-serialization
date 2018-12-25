@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-
 <html>
 
 <head>
@@ -14,69 +13,52 @@
     @import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200");
   </style>
   <div id="page-wrapper">
-
     <!-- Header -->
     <div id="header-wrapper">
       <header id="header" class="container">
         <div class="row">
           <div class="12u">
-
             <!-- Logo -->
-            <a href="" style="color: #c6c8c8; font-size: 1.4em;
-                        margin-left: 30px; outline: 0; text-decoration: none;">RAMBUTAN</a>
-            <h1> <a title="RAMBUTAN" data-wpel-link="internal">
-                               <img src="RambutanLogo.png" width="100" height="100" alt="rambutan">
+            <a href="" style="color: #c6c8c8; font-size: 1.4em;margin-left: 30px; outline: 0; text-decoration: none;">RAMBUTAN</a>
+            <h1>
+              <a title="RAMBUTAN" data-wpel-link="internal">
+                <img src="RambutanLogo.png" width="100" height="100" alt="rambutan">
               </a>
             </h1>
-
             <!-- Nav -->
             <nav id="nav">
-
               <a href="index.html">Everything should be made as simple as possible, but not simpler</a>
             </nav>
-
           </div>
         </div>
       </header>
-
       <div id="banner">
         <div class="container">
           <div class="row">
             <div class="6u 12u">
-
               <!-- Banner Copy -->
               <p>We do something really useful, important, and unique.</p>
               <p>If you want to parse or serializate just click on button</p>
-
-              <a href="parser.html" class="button-big">Parse</a>
-              <a href="serialozator.html" class="button-big">Serializate</a>
-
+              <button id="parse" class="button-big">Parse</button>
+              <a href="serialozator.html" id="serialize" class="button-big">Serializate</a>
             </div>
-
             <div class="6u 12u">
-
-              <p>Add information<Br>
-                <textarea name="comment" cols="60" rows="10"></textarea></p>
-
+              <h2>URL/Data</h2>
+                <textarea type="text" id="urlIn" style="width:300px"></textarea>
+                <div>Result</div>
+                <textarea type="text" id="result" style="width:300px"></textarea>  
             </div>
-
           </div>
         </div>
       </div>
     </div>
-
-
-
-
-
-
-    <!-- Copyright -->
     <div id="copyright">
       &copy; RAMBUTAN. All rights reserved.
     </div>
   </div>
-
-
+  <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
 </body>
-
 </html>

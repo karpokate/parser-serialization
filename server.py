@@ -1,10 +1,12 @@
-
-#import this
-#class Parser:
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from flask import Flask
+from flask import jsonify
+
 app = Flask(__name__)
+html=urlopen("http://pythonscraping.com/pages/page1.html")
+response = html.read()
+html_soup = BeautifulSoup(response, 'html.parser')
 
 class TreeNode:
     def __init__(self,key,val,left=None,right=None,parent=None):
@@ -226,16 +228,8 @@ class Stack:
 	def size(self):
 	    return len(self.items)
 	
-@app.route("/")
-def hello():
-    return "Hello World!"
-
-if __name__ == '__main__':
-    
-    html=urlopen("http://pythonscraping.com/pages/page1.html")
-    response = html.read()
-
-    html_soup = BeautifulSoup(response, 'html.parser')
+@app.route("/to-tree")
+def getTree():
     divs = html_soup.find_all('div')
     h1s = html_soup.find_all('h1')
 
@@ -243,13 +237,6 @@ if __name__ == '__main__':
 
     s = Stack()
     mytree = BinarySearchTree()
-    mytree[3]="red"
-    mytree[4]="blue"
-    mytree[6]="yellow"
-    mytree[2]="at"
-
-    print(mytree[6])
-    print(mytree[2])
 
     for x in divs:
         s.push(x)
@@ -257,5 +244,7 @@ if __name__ == '__main__':
     for y in h1s:
         s.push(y)
 
-    print(s.pop())
-    print(s.pop())
+    mytree[4]=s.pop()
+    mytree[6]=s.pop()
+
+    return 'inserted into searchable tree'
