@@ -5,14 +5,14 @@ var exec = require('child_process').exec, child;
 var nodeConsole = require('console');
 var myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 
- function getData () {
+function getData() {
 
     let file = document.querySelector('#myFile').files[0].name;
     myConsole.log(file);
 
-    exec('python2 omr.py --input images/' + file + ' --output out.jpg --show' , function (error, stdOut, stdErr) {
+    exec('python2 omr.py --input images/' + file + ' --output out.jpg --show', function (error, stdOut, stdErr) {
         myConsole.log(stdOut);
-     });
-     
- }
- document.querySelector('#btnEd').addEventListener('click', getData)
+    });
+
+}
+document.querySelector('#btnEd').addEventListener('click', getData)
