@@ -228,23 +228,24 @@ class Stack:
 	def size(self):
 	    return len(self.items)
 	
-@app.route("/to-tree")
-def getTree():
-    divs = html_soup.find_all('div')
-    h1s = html_soup.find_all('h1')
+#@app.route("/to-tree")
+#def getTree():
+divs = html_soup.find_all('div')
+h1s = html_soup.find_all('h1')
 
-    type(html_soup)
+type(html_soup)
 
-    s = Stack()
-    mytree = BinarySearchTree()
+s = Stack()
+mytree = BinarySearchTree()
 
-    for x in divs:
-        s.push(x)
+for x in divs:
+    s.push(x)
 
-    for y in h1s:
-        s.push(y)
+for y in h1s:
+    s.push(y)
 
-    mytree[4]=s.pop()
-    mytree[6]=s.pop()
+mytree[4]=s.pop()
+mytree[6]=s.pop()
+print(mytree)
 
-    return 'inserted into searchable tree'
+ #   return 'inserted into searchable tree'
