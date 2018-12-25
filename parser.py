@@ -60,7 +60,7 @@ class Solution(object):
         return node
 
 if __name__ == '__main__':
-	# begin
+
 	html=urlopen("http://pythonscraping.com/pages/page1.html")
 	response = html.read()
 
@@ -72,14 +72,13 @@ if __name__ == '__main__':
 
 	s = Stack()
 	toTree = Solution()
-	tree = TreeNode()
+	
 
 	for x in divs:
 		s.push(x)
 
 	for y in h1s:
 		s.push(y)
-
 
 	print(s.getTheFuckOutOfTheStack())
 	print(s.getTheFuckOutOfTheStack())
