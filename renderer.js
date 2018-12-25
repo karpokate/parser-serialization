@@ -61,17 +61,15 @@ function sort() {
 
 function toStack()
 { 
-    const Url='';
+    const Url='http://127.0.0.1:8000/to-stack';
     fetch(Url)
-    .then(data=>{return data.json()})
     .then(res=>{console.log(res)})
 
 }
 function toTree ()
 {
-    const Url='';
+    const Url='http://127.0.0.1:8000/to-tree';
     fetch(Url)
-    .then(data=>{return data.json()})
     .then(res=>{console.log(res)})
 }
 
