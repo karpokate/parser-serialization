@@ -38,15 +38,33 @@
             <div class="6u 12u">
               <!-- Banner Copy -->
               <p>We do something really useful, important, and unique.</p>
-              <p>If you want to parse or serializate just click on button</p>
+              <p>If you want to parse or serializate just click on a button</p>
               <button id="parse" class="button-big">Parse</button>
-              <a href="serialozator.html" id="serialize" class="button-big">Serializate</a>
+              <button id="serialize" class="button-big">Serializate</button>
+              <br>
+              <hr>
+              <br>
+              <button id="search" class="button-big">Search</button>
+              <div id="searchModal" class="modal">
+                <div class="modal-content form-style-4">
+                    <span class="close">&times;</span>
+                    <span>Enter Search word/node</span><input id="popup1" type="text" name="field1" required="true" /></label>
+                </div>
+              </div>
+              <div id="filterModal" class="modal">
+                  <div class="modal-content form-style-4">
+                      <span class="close">&times;</span>
+                      <span>Enter Filter word/node</span><input id="popup1" type="text" name="field1" required="true" /></label>
+                  </div>
+                </div>
+              <button id="filter" class="button-big">Filter</button>
+              <button id="sort" class="button-big">Sort</button>
             </div>
             <div class="6u 12u">
               <h2>URL/Data</h2>
-                <textarea type="text" id="urlIn" style="width:300px"></textarea>
+                <textarea type="text" id="urlIn" cols="30" rows="2"></textarea>
                 <div>Result</div>
-                <textarea type="text" id="result" style="width:300px"></textarea>  
+                <textarea readonly type="text" id="result" cols="30" rows="10"></textarea>  
             </div>
           </div>
         </div>
