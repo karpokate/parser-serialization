@@ -242,7 +242,7 @@ def toTree():
     for y in h1s:
         s.push(y)
 
-    return 'inserted into stack'
+    return 'inserted into searchable tree'
 
 @app.route("/to-stack")
 def toStack():
@@ -259,4 +259,4 @@ def toStack():
     for y in range(0, len(h1s)):
         mytree[y+10]=h1s[y];
 
-    return 'inserted into searchable tree'
+    return 'inserted into stack'
