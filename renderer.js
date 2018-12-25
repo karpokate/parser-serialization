@@ -60,12 +60,31 @@ function sort() {
     document.getElementById("result").value = divs;
 }
 
+function toStack()
+{ 
+    const Url='';
+    fetch(Url)
+    .then(data=>{return data.json()})
+    .then(res=>{console.log(res)})
+
+}
+function toTree ()
+{
+    const Url='';
+    fetch(Url)
+    .then(data=>{return data.json()})
+    .then(res=>{console.log(res)})
+}
+
 document.querySelector('#parse').addEventListener('click', parse)
 document.querySelector('#serialize').addEventListener('click', serialize)
 
 document.querySelector('#search').addEventListener('click', search)
 document.querySelector('#filter').addEventListener('click', filter)
 document.querySelector('#sort').addEventListener('click', sort)
+
+document.querySelector('#to_stack').addEventListener('click', toStack)
+document.querySelector('#to_tree').addEventListener('click', toTree)
 
 
 // Get the modal
