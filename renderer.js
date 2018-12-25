@@ -41,7 +41,7 @@ function serialize() {
 
 function search() {
     let phrase = document.getElementById("popup1").value;
-    let resultOfSearch = divs.search(phrase);
+    let resultOfSearch = divs.includes(phrase);
     let resultValue = "not found the phrase: " + phrase;
     if(resultOfSearch)
         resultValue = "found the phrase: " + phrase;
