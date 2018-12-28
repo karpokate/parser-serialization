@@ -6,6 +6,8 @@ const rp = require('request-promise');
 const cheerio = require('cheerio');
 
 let divs = [];
+let ps = [];
+let h1s = [];
 function parse() {
     
     let url = document.getElementById("urlIn").value;
@@ -22,9 +24,22 @@ function parse() {
         $('div').each(function(i, elem) {
             divs.push($(this).text());
         });
+
+        $('h1').each(function(i, elem) {
+            h1s.push($(this).text());
+        });
         
+        $('p').each(function(i, elem) {
+            ps.push($(this).text());
+        });
         console.log(divs);
+        console.log(h1s);
+        console.log(ps);
         document.getElementById("result").value = divs;
+        if(h1s.length>0)
+            document.getElementById("h1s").value = h1s;
+        if(ps.length>0)
+            document.getElementById("ps").value = ps;
       })
       .catch((err) => {
         console.log(err);
@@ -64,7 +79,6 @@ function toStack()
     const Url='http://127.0.0.1:8000/to-stack';
     fetch(Url)
     .then(res=>{console.log(res)})
-
 }
 function toTree ()
 {
