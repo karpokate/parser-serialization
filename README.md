@@ -13,3 +13,10 @@ $ export FLASK_APP=server.py
 $ python -m flask run
  * Running on http://127.0.0.1:5000/
 ```
+
+### Server start
+```py
+sudo lsof -i tcp:8000
+kill 12345
+gunicorn -w 4 server:app
+```
